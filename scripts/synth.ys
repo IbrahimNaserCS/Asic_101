@@ -1,0 +1,20 @@
+read_verilog -sv \
+  rtl/adder8.v \
+  rtl/alu_core.v \
+  rtl/alu_top.v
+
+hierarchy -check -top alu_top
+
+check
+
+synth -top alu_top
+
+stat
+
+write_verilog -noattr build/alu_top_synth.v
+
+show \
+  -format svg \
+  -viewer none \
+  -prefix build/alu_top_synth \
+  alu_top
