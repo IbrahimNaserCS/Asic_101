@@ -2,3 +2,6 @@ build/
 *.vcd
 *.fst
 *.log
+.DS_Store
+asic_variants/*/runs/
+asic/runs/
